@@ -1,1 +1,67 @@
-xyz test
+第一步：cd进入你放项目文件的地址
+第二步：输入git init
+第三步：输入git add .     
+第四步： git commit -m "first commit"
+第五步： git push origin master
+    git remote add origin https://github.com/ltfhxdz/hello-world.git
+    git remote add origin git@github.com:ltfhxdz/hello-world.git
+    git push -u origin master
+
+修改成ssh url
+    git remote set-url origin git@github.com:ltfhxdz/hello-world.git
+
+查看clone地址
+    git remote -v
+
+git commit -m "second commit"
+
+生成ssh秘钥
+ssh-keygen -t rsa -b 4096 -C "ltfhxdz@gmail.com"
+
+
+18681@DESKTOP-D1D6Q80 MINGW64 /d/xyz/workspace/hello-world (master)
+$ ls -al ~/.ssh
+ls: cannot access '/c/Users/18681/.ssh': No such file or directory
+
+18681@DESKTOP-D1D6Q80 MINGW64 /d/xyz/workspace/hello-world (master)
+$ ssh-keygen -t rsa -b 4096 -C "ltfhxdz@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/18681/.ssh/id_rsa):
+Created directory '/c/Users/18681/.ssh'.
+Enter passphrase (empty for no passphrase):xyz
+Enter same passphrase again:xyz
+Your identification has been saved in /c/Users/18681/.ssh/id_rsa
+Your public key has been saved in /c/Users/18681/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:2KF1GAcSuNjfuCDMahzWBACEj+hzRy6dIV/gEp9nzR4 ltfhxdz@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|B.   .o.o..      |
+|.. ... . +       |
+|.o.o+.o * .      |
+|o o+o* O E       |
+|.oo B.OoS .      |
+| =++.*o ..       |
+|o.+.o. .         |
+|.o    .          |
+|.                |
++----[SHA256]-----+
+
+查看ssh代理的pid，正在运行
+    $ eval $(ssh-agent -s)  
+    Agent pid 222
+
+将 SSH 密钥添加到 ssh-agent
+    $ ssh-add ~/.ssh/id_rsa
+    Enter passphrase for /c/Users/18681/.ssh/id_rsa:
+    Identity added: /c/Users/18681/.ssh/id_rsa (ltfhxdz@gmail.com)
+将 SSH 密钥复制到剪贴板
+    $ clip < ~/.ssh/id_rsa.pub
+
+18681@DESKTOP-D1D6Q80 MINGW64 /d/xyz/workspace/hello-world (master)
+$ git push origin master
+The authenticity of host 'github.com (13.229.188.59)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com,13.229.188.59' (RSA) to the list of known hosts.
+Everything up-to-date

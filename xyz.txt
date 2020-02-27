@@ -9,9 +9,17 @@
 
 修改成ssh url
     git remote set-url origin git@github.com:ltfhxdz/hello-world.git
+    git remote set-url origin git@github.com:ltfhxdz/learned.git
 
 查看clone地址
     git remote -v
+
+
+$ git remote -v
+origin  https://github.com/ltfhxdz/learned.git (fetch)
+origin  https://github.com/ltfhxdz/learned.git (push)
+
+
 
 git commit -m "second commit"
 

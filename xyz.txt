@@ -36,8 +36,8 @@ $ ssh-keygen -t rsa -b 4096 -C "ltfhxdz@gmail.com"
 Generating public/private rsa key pair.
 Enter file in which to save the key (/c/Users/18681/.ssh/id_rsa):
 Created directory '/c/Users/18681/.ssh'.
-Enter passphrase (empty for no passphrase):xyz
-Enter same passphrase again:xyz
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
 Your identification has been saved in /c/Users/18681/.ssh/id_rsa
 Your public key has been saved in /c/Users/18681/.ssh/id_rsa.pub
 The key fingerprint is:
@@ -65,6 +65,9 @@ The key's randomart image is:
     Identity added: /c/Users/18681/.ssh/id_rsa (ltfhxdz@gmail.com)
 将 SSH 密钥复制到剪贴板
     $ clip < ~/.ssh/id_rsa.pub
+
+打开github ssh生成的网页，粘贴进入
+
 
 18681@DESKTOP-D1D6Q80 MINGW64 /d/xyz/workspace/hello-world (master)
 $ git push origin master

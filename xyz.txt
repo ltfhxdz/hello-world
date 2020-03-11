@@ -6,28 +6,29 @@ git pull origin master先将远程仓库master中的信息同步到本地仓库m
 git push origin master 将本地版本库推送到远程服务器，
 origin是远程主机，master表示是远程服务器上的master分支和本地分支重名的简写，分支名是可以修改的
 
-
+Git 同步　// 相当于命令行~: git push origin master
+Git 提交（C）—> "master"...　// 相当于命令行~: git add + commit
 
 第一步：cd进入你放项目文件的地址
 第二步：输入git init
-第三步：输入git add .     
+第三步：输入git add . 
 第四步： git commit -m "first commit"
 第五步： git push origin master
-    git remote add origin https://github.com/ltfhxdz/hello-world.git
-    git remote add origin git@github.com:ltfhxdz/hello-world.git
-    git push -u origin master
+git remote add origin https://github.com/ltfhxdz/hello-world.git
+git remote add origin git@github.com:ltfhxdz/hello-world.git
+git push -u origin master
 
 修改成ssh url
-    git remote set-url origin git@github.com:ltfhxdz/hello-world.git
-    git remote set-url origin git@github.com:ltfhxdz/learned.git
+git remote set-url origin git@github.com:ltfhxdz/hello-world.git
+git remote set-url origin git@github.com:ltfhxdz/learned.git
 
 查看clone地址
-    git remote -v
+git remote -v
 
 
 $ git remote -v
-origin  https://github.com/ltfhxdz/learned.git (fetch)
-origin  https://github.com/ltfhxdz/learned.git (push)
+originhttps://github.com/ltfhxdz/learned.git (fetch)
+originhttps://github.com/ltfhxdz/learned.git (push)
 
 
 
@@ -54,30 +55,30 @@ The key fingerprint is:
 SHA256:2KF1GAcSuNjfuCDMahzWBACEj+hzRy6dIV/gEp9nzR4 ltfhxdz@gmail.com
 The key's randomart image is:
 +---[RSA 4096]----+
-|B.   .o.o..      |
-|.. ... . +       |
-|.o.o+.o * .      |
-|o o+o* O E       |
-|.oo B.OoS .      |
-| =++.*o ..       |
-|o.+.o. .         |
-|.o    .          |
-|.                |
+|B. .o.o..|
+|.. ... . + |
+|.o.o+.o * .|
+|o o+o* O E |
+|.oo B.OoS .|
+| =++.*o .. |
+|o.+.o. . |
+|.o.|
+|.|
 +----[SHA256]-----+
 
 查看ssh代理的pid，正在运行
-    $ eval $(ssh-agent -s)  
-    Agent pid 222
+$ eval $(ssh-agent -s)
+Agent pid 222
 
 id_rsa目录：
 C:\Users\18681\.ssh
 
 将 SSH 密钥添加到 ssh-agent
-    $ ssh-add ~/.ssh/id_rsa
-    Enter passphrase for /c/Users/18681/.ssh/id_rsa:
-    Identity added: /c/Users/18681/.ssh/id_rsa (ltfhxdz@gmail.com)
+$ ssh-add ~/.ssh/id_rsa
+Enter passphrase for /c/Users/18681/.ssh/id_rsa:
+Identity added: /c/Users/18681/.ssh/id_rsa (ltfhxdz@gmail.com)
 将 SSH 密钥复制到剪贴板
-    $ clip < ~/.ssh/id_rsa.pub
+$ clip < ~/.ssh/id_rsa.pub
 
 打开github ssh生成的网页，粘贴进入
 
@@ -106,3 +107,40 @@ git使用层次结构配置的概念。
 
 
 no supported authentication methods available(server sent:publickey)
+
+C:\Users\18681\AppData\Local\微信开发者工具\User Data\WeappFileSystem\o6zAJs-LGxKjJ6FStOf4k0R8ZRBQ\wxa0ef2e707b85cd7b\tmp
+
+http://tmp/wxa0ef2e707b85cd7b.o6zAJs-LGxKjJ6FStOf4k0R8ZRBQ.Qc2QIZytpBYCe0737e409a1c4273b777e97a1d1864a8.png
+
+
+tesseract imagename outputbase [-l lang] [-psm pagesegmode] [configfile...]
+
+tesseract imagename outputbase C:/Users/18681/Pictures/小程序/温故知新.jpg
+
+
+tesseract imagename outputbase kai.jpg
+
+tesseract imagename kai.jpg
+tesseract kai.jpg out
+tesseract kai.jpg out –l chi_sim+eng
+tesseract huanghe.jpg huanghe –l chi_sim
+tesseract xiao.png xiao –l chi_sim
+tesseract yijianmei.jpg yijianmei –l chi_sim
+tesseract kai.jpg kai –l chi_sim
+
+
+在cmd窗口中执行 tesseract test.jpg test.txt –l chi_sim+eng
+（chi_sim是中文识别包，equ是数学公式包，eng是英文包），
+即可将图片中的文字识别出来
+
+警告：分辨率0 dpi无效。用70代替。
+估计分辨率为2041
+空页！！
+估计分辨率为2041
+空页！！
+
+QPS-QPS每秒查询率
+
+生成图片的临时目录：
+C:\Users\18681\AppData\Local\微信开发者工具\User Data\WeappFileSystem\o6zAJs-LGxKjJ6FStOf4k0R8ZRBQ\wxa0ef2e707b85cd7b\tmp
+

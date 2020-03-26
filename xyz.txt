@@ -1,3 +1,10 @@
+vs code json格式化 快捷键ctrl + alt + M
+
+常用的有fori/sout/psvm+Tab即可生成循环、System.out、main方法等boilerplate样板代码 
+
+Ctrl+Alt+O，优化导入的类和包
+
+
 简单的代码提交流程
 git status 查看工作区代码相对于暂存区的差别
 git add . 将当前目录下修改的所有代码从工作区添加到暂存区 . 代表当前目录
@@ -117,6 +124,10 @@ tesseract imagename outputbase [-l lang] [-psm pagesegmode] [configfile...]
 
 tesseract imagename outputbase C:/Users/18681/Pictures/小程序/温故知新.jpg
 
+通过tesseract --list-langs查看本地语言包
+
+可以通过tesseract --help-psm 查看psm
+
 
 tesseract imagename outputbase kai.jpg
 
@@ -143,4 +154,176 @@ QPS-QPS每秒查询率
 
 生成图片的临时目录：
 C:\Users\18681\AppData\Local\微信开发者工具\User Data\WeappFileSystem\o6zAJs-LGxKjJ6FStOf4k0R8ZRBQ\wxa0ef2e707b85cd7b\tmp
+
+安装pip
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+
+然后在下载的文件夹中运行以下命令get-pip.py：
+python get-pip.py
+
+配置pip path    环境变量
+在path中添加D:\Programs\Python\Python38\Scripts
+
+D:\Downloads>python get-pip.py
+Collecting pip
+  Downloading pip-20.0.2-py2.py3-none-any.whl (1.4 MB)
+     |████████████████████████████████| 1.4 MB 273 kB/s
+Collecting wheel
+  Downloading wheel-0.34.2-py2.py3-none-any.whl (26 kB)
+Installing collected packages: pip, wheel
+  Attempting uninstall: pip
+    Found existing installation: pip 19.2.3
+    Uninstalling pip-19.2.3:
+      Successfully uninstalled pip-19.2.3
+  WARNING: The scripts pip.exe, pip3.8.exe and pip3.exe are installed in 'D:\Programs\Python\Python38\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script wheel.exe is installed in 'D:\Programs\Python\Python38\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+
+
+通过 tesseract -v 看一下是否安装成成功
+通过 tesseract --list-langs 查看本地语言包：
+
+D:\Programs\Tesseract-OCR\tessdata  
+
+
+
+TESSDATA_PREFIX
+  设置：D:\Programs\Tesseract-OCR\tessdata  
+        3.02版本，对语种的查询有效，但不能执行python命令
+        只能设置为：D:\Programs\Tesseract-OCR
+
+        5.0版本就可以设置：D:\Programs\Tesseract-OCR\tessdata
+
+
+python --version  查看版本
+where python      查询python path
+D:\Programs\Anaconda3\python.exe
+D:\Programs\Python\Python38\python.exe
+
+tesseract -v    查看版本
+tesseract v5.0.0-alpha.20200223   要安装5.0版本，命令行和IDE都正常了
+
+exit()  退出python
+
+tesseract D:\xyz\workspace\python\images\number.png number –l eng
+
+https://blog.csdn.net/qq_41895190/article/details/82696550
+
+中文识别
+tesseract D:\xyz\workspace\OCR\huanghe.jpg huanghe -l chi_sim
+在哪里执行，在哪里生成结果txt文件
+
+python 图像识别
+1.pip install pytesseract     ok
+2、pip install pyocr          ok
+3、pip install pillow         ok  是Python平台上的图像处理标准库，功能非常强大
+4、安装tesseract-ocr：http://jaist.dl.sourceforge.net/project/tesseract-ocr-alt/tesseract-ocr-setup-3.02.02.exe，安装在C:\Program Files\下  ok
+5、找到 pytesseract.py 更改 tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'  ok
+
+D:/Programs/Tesseract-OCR/tesseract.exe
+
+PIL：（Python Imaging Library）是Python平台上的图像处理标准库，功能非常强大。
+pytesseract ：图像识别库。
+
+我这里使用的是python3.6，PIL不支持python3所以使用如下命令
+pip install pytesseract
+pip install pillow
+Pillow是PIL的一个派生分支，但如今已经发展成为比PIL本身更具活力的图像处理库。
+
+C:\Users\18681>pip install pyocr
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='pypi.org', port=443): Read timed out. (read timeout=15)")': /simple/pyocr/
+Collecting pyocr
+  Downloading pyocr-0.7.2.tar.gz (65 kB)
+     |████████████████████████████████| 65 kB 94 kB/s
+ERROR: Could not find a version that satisfies the requirement Pillow (from pyocr) (from versions: none)
+ERROR: No matching distribution found for Pillow (from pyocr)
+
+tesseract D:\xyz\workspace\python\images\en2.jpg D:\xyz\workspace\python\images\en2.txt
+tesseract D:\xyz\workspace\python\images\en3.jpg D:\xyz\workspace\python\images\en3
+
+tesseract D:\xyz\workspace\python\images\cn.jpg cn -l chi_sim
+
+pyqt5是一套Python绑定Digia QT5应用的框架。它可用于Python 2和3。本教程使用Python 3。Qt库是最强大的GUI库之一。
+
+pip install PyQt5 -i https://pypi.douban.com/simple
+
+pip install opencv-python
+如果在anaconda环境中安装OpenCV，则通过下面的方法进行安装：
+
+conda install opencv
+安装完毕OpenCV后，可以通过下述方法来查看是否安装成功：
+
+# 查看引入OpenCV库时是否报错import cv2# 查看安装的版本cv2.__version__# 我这里显示的版本信息是 '3.4.1'
+
+通过tuna.tsinghua 镜像站安装 opencv-python包
+在 Anaconda Prompt 命令行窗口，输入安装命令：
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-python
+可以快速完成安装过程
+
+
+
+
+应用名称  象棋识谱
+AppID       18990061
+API Key     7L0MScc8VOgob1x51A69gmYr
+Secret Key  XuEOKrU6N0GE8PKGBdONnWSb7mKrwm74
+
+象棋识谱 api url
+https://aip.baidubce.com/rpc/2.0/ai_custom/v1/detection/chessx
+
+github ip
+  IP Address	
+  140.82.114.3
+140.82.114.3  github.com
+199.232.5.194 github.global.ssl.fastly.net
+  IP Address	
+  199.232.5.194
+
+机器学习  https://github.com/weizy1981/MachineLearning
+
+刷新 DNS 缓存 cmd:  ipconfig /flushdns
+
+names = ['separ-length', 'separ-width', 'petal-length', 'petal-width', 'class']
+名称=['分隔符长度'，'分隔符宽度'，'花瓣长度'，'花瓣宽度'，'类']
+
+UCI 机器学习仓库
+http://archive.ics.uci.edu/ml/datasets/Iris
+
+
+用法：cv2.namedWindow('窗口标题',默认参数)
+默认参数：
+cv2.WINDOW_AUTOSIZE+cv2.WINDOW_KEEPRATIO+cv2.WINDOW_GUI_EXPANDED)
+参数：
+（1）cv2.WINDOW_NORMAL：窗口大小可改变。
+（2）cv2.WINDOW_AUTOSIZE：窗口大小不可改变。
+（3）cv2.WINDOW_FREERATIO：自适应比例。
+（4）cv2.WINDOW_KEEPRATIO：保持比例。
+
+
+chess1
+            "location": {
+                "height": 96,
+                "left": 313,
+                "top": 165,
+                "width": 106
+            },
+            "name": "heishi",
+
+chess2
+            "location": {
+                "height": 23,
+                "left": 103,
+                "top": 45,
+                "width": 25
+            },
+            "name": "heishi",
+
+
+
+
+
+
+
+
 
